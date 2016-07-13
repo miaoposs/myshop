@@ -1,0 +1,5 @@
+1406:Data too long for column 'password' at row 1
+1406:Data too long for column 'password' at row 1
+1062:Duplicate entry 'admin' for key 'PRIMARY'
+1062:Duplicate entry 'admin' for key 'PRIMARY'
+1062:Duplicate entry 'admin' for key 'PRIMARY'
