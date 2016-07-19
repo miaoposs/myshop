@@ -3,7 +3,7 @@
 
 	$_session["strings"]="test";
 
-	echo $_session["strings"];
-
+	echo $_session["strings"]."<br />";
+	var_dump($_session);
 
 ?>

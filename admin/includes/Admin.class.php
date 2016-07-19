@@ -3,7 +3,7 @@
 	
 	class Admin extends DB
 	{
-		protected $table = 'test';
+		protected $table = 'admin';
 
 		/*验证继承关系中构造
 		函数覆盖问题用的
@@ -23,8 +23,6 @@
 		{
 			$password = md5($password);
 			$sql = "select * from {$this->db_getTableName()} where username = '{$username}' and password = '{$password}' ";
-			echo $sql;
-			var_dump($this->db_getInfo($sql));exit();
 			return $this->db_getInfo($sql);
 			
 		}

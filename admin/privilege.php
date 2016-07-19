@@ -23,6 +23,8 @@
 			if($admin->checkByUsernameAndPassword($username,$password))
 			{
 				admin_redirect('index.php','登录成功，转到首页',1);
+				$_SESSION["username"] = $username;
+				//var_dump($_SESSION);
 			}else
 			{
 				admin_redirect('privilege.php','用户名与密码有误',3);
