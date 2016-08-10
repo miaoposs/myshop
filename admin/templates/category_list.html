@@ -11,7 +11,7 @@
 <body>
 
 <h1>
-<span class="action-span"><a href="">添加分类</a></span>
+<span class="action-span"><a href="category.php?act=add">添加分类</a></span>
 <span class="action-span1"><a href="">ITCAST-SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品分类 </span>
 <div style="clear:both"></div>
 </h1>
@@ -27,22 +27,34 @@
     <th>排序</th>
     <th>操作</th>
   </tr>
+  <?php 
+    $i = 0;
+    foreach ($categories as $category) {
+  ?>
   <tr align="center" class="0" id="0_6">
+    
+    <td align="left" class="first-cell" >
+      <?php echo $category['cat_id'];?>
+    </td>
 
     <td align="left" class="first-cell" >
+      <?php echo str_repeat('&nbsp;', $category['level']*4),$category['cat_name'];?>
     </td>
+
     <td width="10%">
-	</td>
+      <?php echo $category['sort_order'];?>
+	  </td>
 
     <td width="10%" align="right">
-	</td>
-
+      <?php echo $category['grade'];?>
+	  </td>
     <td width="24%" align="center">
-      <a href="">编辑</a> |
-      <a href="" onclick="return confirm('你确定删除么?');" title="移除">移除</a>
+      <a href="category.php?act=edit&cat_id=<?php echo $category['cat_id'];?>">编辑</a> |
+      <a href="category.php?act=delete&cat_id=<?php echo $category['cat_id'];?>" onclick="return confirm('你确定删除么?');" title="移除">移除</a>
     </td>
 
   </tr>
+  <?php };?>
   </table>
 </div>
 </form>

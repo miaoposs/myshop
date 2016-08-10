@@ -1,0 +1,13 @@
+1364:Field 'style' doesn't have a default value
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+1054:Unknown column '游戏点卡' in 'where clause'
+1054:Unknown column '游戏点卡' in 'where clause'
+1054:Unknown column '游戏点卡' in 'where clause'
+1364:Field 'style' doesn't have a default value
+1364:Field 'style' doesn't have a default value
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+1241:Operand should contain 1 column(s)
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'upate ecs_category set cat_name=17,parent_id=50,sort_order= where cat_id=qq飞' at line 1
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'upate ecs_category set cat_name=qq飞车,parent_id=0,sort_order=50 where cat_id=' at line 1
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'upate ecs_category set cat_name=qq飞车,parent_id=0,sort_order=50 where cat_id=' at line 1
+1054:Unknown column 'qq飞车' in 'field list'

@@ -10,7 +10,7 @@
 <body>
 
 <h1>
-<span class="action-span"><a href="">商品分类</a></span>
+<span class="action-span"><a href="category.php">商品分类</a></span>
 <span class="action-span1"><a href="">ESHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 编辑分类 </span>
 <div style="clear:both"></div>
 </h1>
@@ -18,11 +18,13 @@
 <div class="main-div">
 
   <form action="category.php" method="post" name="theForm" >
+    <input type="hidden" name="act" value="update" />
+    <input type="hidden" name="cat_id" value="<?php echo $cat_id;?>" />
   <table width="100%" id="general-table">
       <tr>
         <td class="label">分类名称:</td>
         <td>
-          <input type='text' name='category_name' maxlength="20" value='' size='27' />
+          <input type='text' name='cat_name' maxlength="20" value="<?php echo $info['cat_name'];?>" size='27' />
         </td>
       </tr>
       <tr>
@@ -30,6 +32,11 @@
         <td>
           <select name="parent_id">
           <option value="0">顶级分类</option>
+          <?php foreach ($categories as $row) :?>
+          <option value="<?php echo $row['cat_id'];?>" <?php if($row['cat_id'] == $info['parent_id']) echo 'selected="selected"';?>>
+            <?php echo str_repeat('&nbsp;', $row['level']*2).$row['cat_name'];?>
+          </option>
+        <?php endforeach;?>
           </select>
         </td>
       </tr>
@@ -37,7 +44,7 @@
       <tr>
         <td class="label">排序:</td>
         <td>
-          <input type='text' name='sort_order' maxlength="20" value='' size='27' />
+          <input type='text' name='sort_order' maxlength="20" value="<?php echo $info['sort_order'];?>" size='27' />
         </td>
       </tr>
 

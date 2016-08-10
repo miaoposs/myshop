@@ -32,7 +32,8 @@ if(window.parent != window) {
       <table>
       <tr>
         <td>管理员姓名：</td>
-        <td><input type="text" name="username" /></td>
+        <td><input type="text" name="username" value="<?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : '';?>" />
+        </td>
       </tr>
       <tr>
         <td>管理员密码：</td>
@@ -45,7 +46,7 @@ if(window.parent != window) {
 
       <tr>
       <td colspan="2" align="right">
-      <img src="" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="" />
+      <img src="privilege.php?act=captcha" alt="CAPTCHA" style="cursor: pointer;" title="看不清？点击更换另一个验证码。" onclick="this.src='privilege.php?act=captcha'" />
       </td>
       </tr>
 

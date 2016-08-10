@@ -10,19 +10,20 @@
 <body>
 
 <h1>
-<span class="action-span"><a href="">商品分类</a></span>
+<span class="action-span"><a href="category.php">商品分类</a></span>
 <span class="action-span1"><a href="">ESHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 添加分类 </span>
 <div style="clear:both"></div>
 </h1>
 <!-- start add new category form -->
 <div class="main-div">
 
-  <form action="" method="post" name="theForm" >
+  <form action="category.php" method="post" name="theForm" >
+  <input type="hidden" name="act" value="insert" />
   <table width="100%" id="general-table">
       <tr>
         <td class="label">分类名称:</td>
         <td>
-          <input type='text' name='category_name' maxlength="20" value='' size='27' />
+          <input type='text' name='cat_name' maxlength="20" value='' size='27' />
         </td>
       </tr>
       <tr>
@@ -30,6 +31,9 @@
         <td>
           <select name="parent_id">
           <option value="0">顶级分类</option>
+          <?php foreach ($categories as $value) :;?>
+          <option value="<?php echo $value['cat_id'];?>"><?php echo str_repeat('&nbsp;', $value['level']*2).$value['cat_name'];?></option>
+          <?php endforeach;?>
           </select>
         </td>
       </tr>

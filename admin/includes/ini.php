@@ -33,8 +33,6 @@
 	//加载配置文件
 	//global $config;
 	$config = include_once HOME_CONF.'/config.php';
-	//$config = $GLOBALS['config']['mysql']['host'];
 
-	session_start();
 
 ?>
