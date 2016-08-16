@@ -13,12 +13,12 @@
 		}
 
 
-		/*
-		 *无限极分类
-		 *@param1 array    categories  数据库查询返回的商品类别数据；  
-		 *@param2 integer  parent_id   当前递归层所要收集的商品分类，默认为0；
-		 *@param3 integer  level       标志当前递归层，同时也标志了该层商品的级别，默认为0；
-		 *@return array    ret         返回分类后的数组;
+		/**
+		 * 无限极分类
+		 * @param1 array    categories  数据库查询返回的商品类别数据；  
+		 * @param2 integer  parent_id   当前递归层所要收集的商品分类，默认为0；
+		 * @param3 integer  level       标志当前递归层，同时也标志了该层商品的级别，默认为0；
+		 * @return array    ret         返回分类后的数组;
 		 */
 
 

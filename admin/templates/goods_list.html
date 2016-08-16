@@ -5,12 +5,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="styles/general.css" rel="stylesheet" type="text/css" />
 <link href="styles/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+  function change(obj){
+    var value = obj.src;
+    if (value.match('yes')) {
+      obj.src = 'images/no.gif';
+    }else{
+      obj.src = 'images/yes.gif';
+    }
+  }
+
+</script>
 
 </head>
 <body>
 
 <h1>
-<span class="action-span"><a href="">添加商品</a></span>
+<span class="action-span"><a href="goods.php?act=add">添加商品</a></span>
 <span class="action-span1"><a href="">ESHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品列表 </span>
 <div style="clear:both"></div>
 </h1>
@@ -33,29 +45,30 @@
     <th>库存</th>
     <th>操作</th>
   </tr>
-
+<?php foreach ($goods_list as $key => $value) :;?>
   <tr align="center" class="0" id="0_6">
-    <td align="left" class="first-cell" ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><img src="" /></td>
-    <td><img src="" /></td>
-    <td><img src="" /></td>
-    <td><img src="" /></td>
-    <td></td>
-    <td align="right"></td>
+    <td align="left" class="first-cell" ><?php echo $value['goods_id'];?></td>
+    <td><?php echo $value['goods_name'];?></td>
+    <td><?php echo $value['goods_sn'];?></td>
+    <td><?php echo $value['shop_price'];?></td>
+    <td><img src="images/<?php echo $value['is_promote'] ? 'yes' : 'no';?>.gif" style="cursor:pointer;" onclick="change(this)" /></td>
+    <td><img src="images/<?php echo $value['is_best'] ? 'yes' : 'no';?>.gif" style="cursor:pointer;" onclick="change(this)" /></td>
+    <td><img src="images/<?php echo $value['is_new'] ? 'yes' : 'no';?>.gif" style="cursor:pointer;" onclick="change(this)" /></td>
+    <td><img src="images/<?php echo $value['is_hot'] ? 'yes' : 'no';?>.gif" style="cursor:pointer;" onclick="change(this)" /></td>
+    <td><?php echo $value['sort_order'];?></td>
+    <td align="right"><?php echo $value['goods_number'];?></td>
     <td width="24%" align="center">
-      <a href="" title="编辑">编辑</a> |
-      <a href="" title="移除" onclick="return confirm('你确定要将商品放入回收站么？');">移除</a>
+      <a href="goods.php?act=update" title="编辑">编辑</a> |
+      <a href="goods.php?act=remove&goods_id=<?php echo $value['goods_id'];?>" title="移除" onclick="return confirm('你确定要将商品放入回收站么？');">移除</a>
     </td>
   </tr>
-
+<?php endforeach;?>
   </table>
 
   <table cellspacing="0" id="page-table">
   <tr>
-    <td nowrap="true" align="right" style="background-color: rgb(255, 255, 255);">
+    <td nowrap="true" align="center" style="background-color: rgb(255, 255, 255);">
+      <?php echo $page_str;?>
     </td>
   </tr>
 </table>

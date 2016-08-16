@@ -10,6 +10,9 @@
 			'charset' => 'utf8',
 			'prefix' => 'ecs_',
 		),
+
+		//后台商品每页显示的数量
+		'admin_pagecounts' => 5,
 	);
 
 ?>

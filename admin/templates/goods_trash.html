@@ -10,7 +10,7 @@
 <body>
 
 <h1>
-<span class="action-span"><a href="">商品列表</a></span>
+<span class="action-span"><a href="goods.php">商品列表</a></span>
 <span class="action-span1"><a href="">ESHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品回收站 </span>
 <div style="clear:both"></div>
 </h1>
@@ -27,24 +27,24 @@
     <th>价格</th>
     <th>操作</th>
   </tr>
-
+  <?php foreach ($goods_trash as $value) :;?>
   <tr align="center" class="0" id="0_6">
-    <td align="left" class="first-cell" ></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td align="left" class="first-cell" ><?php echo $value['goods_id'];?></td>
+    <td><?php echo $value['goods_name'];?></td>
+    <td><?php echo $value['goods_sn'];?></td>
+    <td><?php echo $value['shop_price'];?></td>
     <td width="24%" align="center">
-      <a href="" title="编辑">还原</a> |
-      <a href="">彻底删除</a>
+      <a href="goods.php?act=restore&goods_id=<?php echo $value['goods_id'];?>">还原</a> |
+      <a href="goods.php?act=delete&goods_id=<?php echo $value['goods_id'];?>">彻底删除</a>
     </td>
   </tr>
-
+<?php endforeach;?>
   </table>
 
   <table cellspacing="0" id="page-table">
   <tr>
-    <td nowrap="true" align="right" style="background-color: rgb(255, 255, 255);">
-     
+    <td nowrap="true" align="center" style="background-color: rgb(255, 255, 255);">
+     <?php echo $page_str;?>
     </td>
   </tr>
 </table>

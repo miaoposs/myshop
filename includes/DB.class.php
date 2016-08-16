@@ -130,7 +130,7 @@
 		}
 
 		/*
-		*获取所有数据
+		*获取所有数据,只返回关联数组
 		*@param string $sql,要执行的sql语句
 		*@retrun mixed,成功返回结果数组，失败返回flase
 		*/

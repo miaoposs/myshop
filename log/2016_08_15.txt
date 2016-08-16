@@ -1,0 +1,2 @@
+1054:Unknown column '0goods_id' in 'where clause'
+1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'goods_id=1' at line 1
