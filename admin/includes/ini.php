@@ -27,6 +27,8 @@
 	@ini_set('error_reporting', E_ALL);
 	@ini_set('display_errors', 1);
 
+	session_start();
+
 	//引入公共函数
 	include_once  ADMIN_INC.'/functions.php';
 

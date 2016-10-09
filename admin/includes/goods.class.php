@@ -36,8 +36,8 @@ class goods extends DB{
 
 
 	/**
-	* 获得商品(或回收站商品)的数量
-	*/
+	 * 获得商品(或回收站商品)的数量
+	 */
 	public function getCounts($choose)
 	{
 		switch ($choose) {

@@ -20,8 +20,6 @@
 		 * @param3 integer  level       标志当前递归层，同时也标志了该层商品的级别，默认为0；
 		 * @return array    ret         返回分类后的数组;
 		 */
-
-
 		public function noLimitCategory($categories,$parent_id=0,$level=0)
 		{
 			static $ret = array();
